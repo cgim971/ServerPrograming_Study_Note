@@ -51,9 +51,10 @@ namespace Google.Protobuf.Protocol {
             "BElETEUQABIKCgZNT1ZJTkcQARIJCgVTS0lMTBACEggKBERFQUQQAyowCgdN",
             "b3ZlRGlyEgYKAlVQEAASCAoERE9XThABEggKBExFRlQQAhIJCgVSSUdIVBAD",
             "KkMKDkdhbWVPYmplY3RUeXBlEggKBE5PTkUQABIKCgZQTEFZRVIQARILCgdN",
-            "T05TVEVSEAISDgoKUFJPSkVDVElMRRADKkEKCVNraWxsVHlwZRIOCgpTS0lM",
+            "T05TVEVSEAISDgoKUFJPSkVDVElMRRADKlEKCVNraWxsVHlwZRIOCgpTS0lM",
             "TF9OT05FEAASDgoKU0tJTExfQVVUTxABEhQKEFNLSUxMX1BST0pFQ1RJTEUQ",
-            "AkIbqgIYR29vZ2xlLlByb3RvYnVmLlByb3RvY29sYgZwcm90bzM="));
+            "AhIOCgpTS0lMTF9IRUFMEANCG6oCGEdvb2dsZS5Qcm90b2J1Zi5Qcm90b2Nv",
+            "bGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Protobuf.Protocol.MsgId), typeof(global::Google.Protobuf.Protocol.CreatureState), typeof(global::Google.Protobuf.Protocol.MoveDir), typeof(global::Google.Protobuf.Protocol.GameObjectType), typeof(global::Google.Protobuf.Protocol.SkillType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -115,6 +116,7 @@ namespace Google.Protobuf.Protocol {
     [pbr::OriginalName("SKILL_NONE")] SkillNone = 0,
     [pbr::OriginalName("SKILL_AUTO")] SkillAuto = 1,
     [pbr::OriginalName("SKILL_PROJECTILE")] SkillProjectile = 2,
+    [pbr::OriginalName("SKILL_HEAL")] SkillHeal = 3,
   }
 
   #endregion
