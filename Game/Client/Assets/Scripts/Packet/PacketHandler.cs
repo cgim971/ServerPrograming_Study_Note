@@ -73,6 +73,20 @@ class PacketHandler {
         }
     }
 
+    public static void S_ChatHandler(PacketSession session, IMessage packet) {
+        S_Chat chatPacket = packet as S_Chat;
+
+        GameObject go = Managers.Object.FindById(chatPacket.ObjectId);
+        if (go == null)
+            return;
+
+        PlayerController pc = go.GetComponent<PlayerController>();
+        if (pc != null) {
+            // 여기서 추가 
+            pc.ShowChat(chatPacket.Message);
+        }
+    }
+
     public static void S_DieHandler(PacketSession session, IMessage packet) {
         S_Die diePacket = packet as S_Die;
 

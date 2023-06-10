@@ -1,12 +1,15 @@
 ﻿using Google.Protobuf.Protocol;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static Define;
 
 public class PlayerController : CreatureController {
     protected Coroutine _coSkill;
+    protected Coroutine _clearCoroutine;
     protected bool _rangedSkill = false;
+    public TextMeshProUGUI Text;
 
     protected override void Init() {
         base.Init();
@@ -127,4 +130,20 @@ public class PlayerController : CreatureController {
     public override void OnDamaged() {
         Debug.Log("Player HIT !");
     }
+
+    public virtual void ShowChat(string message) {
+        Debug.Log(message);
+        Text.text = message;
+        if (_clearCoroutine != null) {
+            StopCoroutine(_clearCoroutine);
+        }
+        _clearCoroutine = StartCoroutine(ClearTextCoroutine());
+    }
+
+    private IEnumerator ClearTextCoroutine() {
+        yield return new WaitForSeconds(5f);
+        ClearText();
+    }
+
+    private void ClearText() => Text.text = string.Empty;
 }

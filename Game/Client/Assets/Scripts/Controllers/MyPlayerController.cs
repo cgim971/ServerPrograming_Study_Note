@@ -33,6 +33,9 @@ public class MyPlayerController : PlayerController {
             return;
         }
 
+        if (Managers.ChatUI.IsChat == true)
+            return;
+
         if (_coSkillCooltime == null) {
             if (Input.GetKey(KeyCode.Space)) {
                 Debug.Log("Skill !");
@@ -75,6 +78,11 @@ public class MyPlayerController : PlayerController {
     // 키보드 입력
     void GetDirInput() {
         _moveKeyPressed = true;
+
+        if (Managers.ChatUI.IsChat == true) {
+            _moveKeyPressed = false;
+            return;
+        }
 
         if (Input.GetKey(KeyCode.W)) {
             Dir = MoveDir.Up;

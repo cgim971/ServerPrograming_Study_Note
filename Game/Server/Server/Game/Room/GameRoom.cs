@@ -215,6 +215,16 @@ namespace Server.Game {
             }
         }
 
+        public void HandleChat(Player player, C_Chat chatPacket) {
+            if (player == null)
+                return;
+
+            S_Chat chatMessage = new S_Chat();
+            chatMessage.ObjectId = player.Info.ObjectId;
+            chatMessage.Message = chatPacket.Message;
+            Broadcast(chatMessage);
+        }
+
         public Player FindPlayer(Func<GameObject, bool> condition) {
             foreach (Player player in _players.Values) {
                 if (condition.Invoke(player))

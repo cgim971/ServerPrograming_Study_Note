@@ -56,6 +56,6 @@ public class CreatureController : BaseController {
     }
 
     public virtual void UseSkill(int skillId) {
-        
+
     }
 }
