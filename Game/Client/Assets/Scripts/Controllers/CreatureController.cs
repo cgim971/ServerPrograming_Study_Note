@@ -56,14 +56,6 @@ public class CreatureController : BaseController {
     }
 
     public virtual void UseSkill(int skillId) {
-        switch (skillId) {
-            case 3: {
-                    GameObject effect = Managers.Resource.Instantiate("Effect/HealEffect");
-                    effect.transform.position = transform.position;
-                    effect.GetComponent<Animator>().Play("HEAL");
-                    GameObject.Destroy(effect, 0.5f);
-                }
-                break;
-        }
+        
     }
 }
