@@ -18,15 +18,15 @@ namespace Server
 	class Program
 	{
 		static Listener _listener = new Listener();
-		static List<System.Timers.Timer> _timers = new List<System.Timers.Timer>();
+		static List<System.Timers.Timer> _timers = new List<System.Timers.Timer>(); // 주기적으로 도는 모든 타이머 리스트
 
 		static void TickRoom(GameRoom room, int tick = 100)
 		{
-			var timer = new System.Timers.Timer();
-			timer.Interval = tick;
-			timer.Elapsed += ((s, e) => { room.Update(); });
-			timer.AutoReset = true;
-			timer.Enabled = true;
+			var timer = new System.Timers.Timer(); // 타이머 설정 
+			timer.Interval = tick; // 몇 tick 마다 실행할지
+			timer.Elapsed += ((s, e) => { room.Update(); }); // 무슨 이벤트를 실행할지
+			timer.AutoReset = true; // 매번 다시 리셋
+			timer.Enabled = true; // 실행
 
 			_timers.Add(timer);
 		}
@@ -37,7 +37,7 @@ namespace Server
 			DataManager.LoadData();
 
 			GameRoom room = RoomManager.Instance.Add(1);
-			TickRoom(room, 50);
+			TickRoom(room, 50); // 룸 생성하면 50ms 마다 실행
 
 			// DNS (Domain Name System)
 			string host = Dns.GetHostName();

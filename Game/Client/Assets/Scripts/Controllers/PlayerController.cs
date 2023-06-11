@@ -132,7 +132,6 @@ public class PlayerController : CreatureController {
     }
 
     public virtual void ShowChat(string message) {
-        Debug.Log(message);
         Text.text = message;
         if (_clearCoroutine != null) {
             StopCoroutine(_clearCoroutine);
