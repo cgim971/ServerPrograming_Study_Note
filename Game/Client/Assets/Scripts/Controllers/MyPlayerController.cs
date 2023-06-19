@@ -58,6 +58,10 @@ public class MyPlayerController : PlayerController {
                 StartCoroutine("CoHealCoolTime");
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.N)) {
+            Managers.ChatUI.ReservationMessage();
+        }
     }
 
     Coroutine _coSkillCooltime;

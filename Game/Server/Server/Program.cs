@@ -55,7 +55,7 @@ namespace Server
 			while (true)
 			{
 				//JobTimer.Instance.Flush();
-				Thread.Sleep(100);
+				Thread.Sleep(100); // 꺼지지 않게 유지만
 			}
 		}
 	}

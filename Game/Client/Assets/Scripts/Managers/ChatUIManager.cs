@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ChatUIManager : MonoBehaviour {
 
     public TMP_InputField ChatInputField;
+    public TMP_InputField ReservationInputField;
     public Button ChatSendBtn;
     public bool IsChat;
 
@@ -19,11 +20,22 @@ public class ChatUIManager : MonoBehaviour {
         if (ChatInputField.text == string.Empty)
             return;
 
-        C_Chat chatMessage = new C_Chat();
-        chatMessage.Message = ChatInputField.text + " ";
-        Managers.Network.Send(chatMessage);
+        SendMessage(ChatInputField.text);
 
         ChatInputField.text = string.Empty;
+    }
+
+    public void SendMessage(string message) {
+        C_Chat chatMessage = new C_Chat();
+        chatMessage.Message = message + " ";
+        Managers.Network.Send(chatMessage);
+    }
+
+    public void ReservationMessage() {
+        if (ReservationInputField.text == string.Empty)
+            return;
+
+        SendMessage(ReservationInputField.text);
     }
 
     public void SetIsChat(bool isChat) {

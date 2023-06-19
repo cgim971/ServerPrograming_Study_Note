@@ -1265,5 +1265,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChatInputField: {fileID: 378332224}
+  ReservationInputField: {fileID: 0}
   ChatSendBtn: {fileID: 1491365288}
   IsChat: 0
